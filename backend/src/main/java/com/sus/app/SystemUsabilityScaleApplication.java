@@ -8,6 +8,7 @@ public class SystemUsabilityScaleApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SystemUsabilityScaleApplication.class, args);
-	}
 
+		System.out.println("Hello");
+	}
 }
