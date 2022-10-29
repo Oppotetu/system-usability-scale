@@ -26,11 +26,16 @@ public class Scale {
 
     }
 
+    public Scale(int q1, int q2) {
+        this.q1 = q1;
+        this.q2 = q2;
+    }
+
     public Scale(int q1, int q2, int sum, int score) {
         this.q1 = q1;
         this.q2 = q2;
-        this.sum = sum;
-        this.score = score;
+        this.sum = this.q1 + this.q2;
+        this.score = this.sum * 2;
     }
 
     public long getId() {
