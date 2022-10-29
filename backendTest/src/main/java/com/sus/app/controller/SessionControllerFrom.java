@@ -1,4 +1,4 @@
-package com.sus.app.systemUsabilityScale.controllers;
+package com.sus.app.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class SessionController {
+public class SessionControllerFrom {
 
     @GetMapping("/")
     public String index(Model model, HttpSession session) {

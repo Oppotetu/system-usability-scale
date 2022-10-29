@@ -1,4 +1,4 @@
-package com.sus.app.systemUsabilityScale;
+package com.sus.app;
 
 import com.sus.app.systemUsabilityScale.config.JpaEntityManagerFactory;
 import com.sus.app.systemUsabilityScale.models.User;
@@ -7,8 +7,6 @@ import com.sus.app.systemUsabilityScale.services.JpaUserDao;
 
 import java.util.List;
 import java.util.Optional;
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
 
 public class UserApplication {
     private static JpaUserDao jpaUserDao;

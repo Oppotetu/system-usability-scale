@@ -1,4 +1,4 @@
-package com.sus.app.systemUsabilityScale.services;
+package com.sus.app.services;
 
 import com.sus.app.systemUsabilityScale.models.User;
 
@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-public class JpaUserDao implements Dao<User> {
+public class JpaUserDao implements Daofrom<User> {
 
     private EntityManager entityManager;
 

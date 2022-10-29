@@ -1,4 +1,4 @@
-package com.sus.app.systemUsabilityScale.services;
+package com.sus.app.services;
 
 import com.sus.app.systemUsabilityScale.models.User;
 
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class UserDao implements Dao<User> {
+public class UserDao implements Daofrom<User> {
 
     private List<User> users = new ArrayList<>();
 

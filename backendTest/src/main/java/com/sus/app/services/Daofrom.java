@@ -1,9 +1,9 @@
-package com.sus.app.systemUsabilityScale.services;
+package com.sus.app.services;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface Dao<T> {
+public interface Daofrom<T> {
 
     Optional<T> get(long id);
     List<T> getAll();

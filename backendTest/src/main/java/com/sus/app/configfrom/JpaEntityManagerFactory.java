@@ -1,4 +1,4 @@
-package com.sus.app.systemUsabilityScale.config;
+package com.sus.app.configfrom;
 
 import com.sus.app.systemUsabilityScale.models.User;
 import org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl;
