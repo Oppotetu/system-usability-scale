@@ -44,16 +44,16 @@ public class ScaleController {
         }
     }
 
-    @PostMapping("/scales")
+/*    @PostMapping("/scales")
     public ResponseEntity<Scale> createScale(@RequestBody Scale scale) {
         try {
             Scale _scale = scaleRepository
-                    .save(new Scale(scale.getQ1(), scale.getQ2()));
+                    .save(new Scale(scale.getQ1(), scale.getQ2(), scale.getQ3(), scale.getQ4(), scale.getQ5(), scale.getQ6(), scale.getQ7(), scale.getQ8(), scale.getQ9(), scale.getQ10()));
             return new ResponseEntity<>(_scale, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    }*/
 
     @PutMapping("/scales/{id}")
     public ResponseEntity<Scale> updateScale(@PathVariable("id") long id, @RequestBody Scale scale) {
@@ -63,9 +63,14 @@ public class ScaleController {
             Scale _scale = scaleData.get();
             _scale.setQ1(scale.getQ1());
             _scale.setQ2(scale.getQ2());
-/*
-            _scale.setSum(_scale.getQ1() + _scale.getQ2());
-*/
+            _scale.setQ3(scale.getQ3());
+            _scale.setQ4(scale.getQ4());
+            _scale.setQ5(scale.getQ5());
+            _scale.setQ6(scale.getQ6());
+            _scale.setQ7(scale.getQ7());
+            _scale.setQ8(scale.getQ8());
+            _scale.setQ9(scale.getQ9());
+            _scale.setQ10(scale.getQ10());
             return new ResponseEntity<>(scaleRepository.save(_scale), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
