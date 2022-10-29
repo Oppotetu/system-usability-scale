@@ -1,5 +1,6 @@
 package com.sus.app.systemUsabilityScale;
 
+import com.sus.app.systemUsabilityScale.config.JpaEntityManagerFactory;
 import com.sus.app.systemUsabilityScale.models.User;
 import com.sus.app.systemUsabilityScale.services.Dao;
 import com.sus.app.systemUsabilityScale.services.JpaUserDao;
@@ -21,26 +22,36 @@ public class UserApplication {
         getAllUsers().forEach(user -> System.out.println(user.getName()));
     }
 
+    private static class JpaUserDaoHolder {
+        private static final JpaUserDao jpaUserDao = new JpaUserDao(new JpaEntityManagerFactory().getEntityManager());
+    }
+
+    public static Dao getJpaUserDao() {
+        return JpaUserDaoHolder.jpaUserDao;
+    }
+
     public static User getUser(long id) {
-        Optional<User> user = jpaUserDao.get(id);
+        Optional<User> user = getJpaUserDao().get(id);
 
         return user.orElseGet(
-                () -> new User("non-existing user", "no-email"));
+                () -> {
+                    return new User("non-existing user", "no-email");
+                });
     }
 
     public static List<User> getAllUsers() {
-        return jpaUserDao.getAll();
+        return getJpaUserDao().getAll();
     }
 
     public static void updateUser(User user, String[] params) {
-        jpaUserDao.update(user, params);
+        getJpaUserDao().update(user, params);
     }
 
     public static void saveUser(User user) {
-        jpaUserDao.save(user);
+        getJpaUserDao().save(user);
     }
 
     public static void deleteUser(User user) {
-        jpaUserDao.delete(user);
+        getJpaUserDao().delete(user);
     }
 }

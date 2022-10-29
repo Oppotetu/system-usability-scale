@@ -63,5 +63,4 @@ public class JpaEntityManagerFactory {
         dataSourceBuilder.password(DB_PASSWORD);
         return dataSourceBuilder.build();
     }
-
 }
