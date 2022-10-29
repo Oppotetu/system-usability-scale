@@ -30,7 +30,7 @@ public class SessionController {
 
         List<String > favoriteColors
                 =getFavColors(request.getSession());
-        if (!StringUtils.isEmpty(color)) {
+        if (StringUtils.hasLength(color)) {
             favoriteColors.add(color);
             request.getSession().
                     setAttribute("favoriteColors", favoriteColors);
