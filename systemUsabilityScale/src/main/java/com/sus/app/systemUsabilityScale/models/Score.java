@@ -16,13 +16,17 @@ public class Score {
     @Column(name = "score")
     private int score;
 
+    @Column(name = "above average")
+    private boolean aboveAverage;
+
     public Score() {
 
     }
 
-    public Score(int sum, int score) {
+    public Score(int sum, int score, boolean aboveAverage) {
         this.sum = sum;
         this.score = score;
+        this.aboveAverage = aboveAverage;
     }
 
     public long getId() {
@@ -43,6 +47,14 @@ public class Score {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public boolean isAboveAverage() {
+        return aboveAverage;
+    }
+
+    public void setAboveAverage(boolean aboveAverage) {
+        this.aboveAverage = aboveAverage;
     }
 
     public String toString() {
