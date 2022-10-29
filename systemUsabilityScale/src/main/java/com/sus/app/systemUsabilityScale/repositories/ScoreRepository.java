@@ -15,7 +15,7 @@ public interface ScoreRepository extends JpaRepository<Score, Integer> {
 
     List<Score> findByAboveAverage(Boolean aboveAverage);
 
-    @Query("UPDATE Score t SET t.score = :score WHERE t.id = :id")
+/*    @Query("UPDATE Score t SET t.score = :score WHERE t.id = :id")
     @Modifying
-    public void updateScore(Integer id, int Score);
+    public void updateScore(Integer id, int Score);*/
 }

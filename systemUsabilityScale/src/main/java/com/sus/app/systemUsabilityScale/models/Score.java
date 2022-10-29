@@ -11,12 +11,13 @@ public class Score {
     private long id;
 
     @Column(name = "sum")
+    /*@OneToMany(mappedBy = "mapsum")*/
     private int sum;
 
     @Column(name = "score")
     private int score;
 
-    @Column(name = "above average")
+    @Column(name = "aboveAverage")
     private boolean aboveAverage;
 
     public Score() {
@@ -58,7 +59,7 @@ public class Score {
     }
 
     public String toString() {
-        return "Scale [id=" + id + ", sum=" + sum + ", score=" + score + "]";
+        return "Evaluation with id: " + id + " has sum: " + sum + ", and a score of: " + score + ".";
     }
 }
 
