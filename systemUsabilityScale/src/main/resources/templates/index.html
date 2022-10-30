@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 
 <head>
     <link th:href="@{/styles/style.css}" rel="stylesheet" />
@@ -18,8 +20,7 @@
 
         <h2>System Usability Scale (SUS) App</h2>
         <h3>Please evaluate the system below</h3>
-        <span th:text="${serverTime}" />
-        <div class="table">
+        <form action="#" th:action="@{/saveScale}" th:object="${Scale}" method="post" class="table">
 <!--            <thead class="thead">
             <tr>
                 <th>Questions</th>
@@ -31,7 +32,7 @@
             <tr>
                 <td>1. I think that I would like to use this system frequently.</td>
                 <td>
-                    <select id="q1" required>
+                    <select id="q1" th:field="*{id}" required>
                         <option value="" selected disabled hidden>Choose here</option>
                         <option value={1}>1 - strongly disagree</option>
                         <option value={2}>2</option>
@@ -167,8 +168,13 @@
                     </select>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Submit" />
+                </td>
+            </tr>
             </tbody>
-        </div>
+        </form>
     </div>
 </div>
 </body>

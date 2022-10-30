@@ -5,9 +5,14 @@ import com.sus.app.systemUsabilityScale.repositories.ScaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
+import org.springframework.util.MultiValueMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,6 +49,7 @@ public class ScaleController {
         }
     }
 
+
 /*    @PostMapping("/scales")
     public ResponseEntity<Scale> createScale(@RequestBody Scale scale) {
         try {
@@ -53,6 +59,29 @@ public class ScaleController {
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }*/
+
+/*    @PostMapping("/saveScale")
+    public ResponseEntity<Scale> saveScale(@ModelAttribute Scale scale,
+                            BindingResult errors, Model model) {
+        model.addAttribute("scale", new Scale());
+        return new ResponseEntity<>(scale, HttpStatus.OK);
+    }*/
+
+/*    @GetMapping("/register")
+    public String showForm(Model model) {
+        Scale scale = new Scale();
+        model.addAttribute("scale", scale);
+
+        List<String> listAgreement = Arrays.asList("1 - strongly disagree", "2", "3", "4", "5 - strongly agree");
+        model.addAttribute("listAgreement", listAgreement);
+        return "scale_form";
+    }
+
+    @PostMapping("/register")
+    public String submitForm(@ModelAttribute("scale") Scale scale) {
+        System.out.println(scale);
+        return "register_success";
     }*/
 
     @PutMapping("/scales/{id}")
