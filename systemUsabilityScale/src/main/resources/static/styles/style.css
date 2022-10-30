@@ -1,0 +1,99 @@
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav-bar {
+    background: #131a26;
+    color: #eee;
+    height: 70px;
+    width: 100%;
+    position: relative;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 3;
+}
+
+a {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+}
+
+.table {
+    align-self: center;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    padding: 2px;
+    margin: 3px;
+}
+
+thead {
+    background-color: #131a26;
+    color: #eee;
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    justify-items: space-around;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+th {
+    padding: 7px;
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+
+td {
+    padding-right: 10px;
+    display: table-cell;
+    vertical-align: inherit;
+}
