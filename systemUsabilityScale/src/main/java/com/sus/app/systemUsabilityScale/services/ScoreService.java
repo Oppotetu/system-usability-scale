@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class ScoreService {
 
-    public int computeScore (Scale scale) {
-        int result =
+    public double computeScore (Scale scale) {
+        double result =
                         scale.getQ1() +
                         scale.getQ2() +
                         scale.getQ3() +
@@ -19,6 +19,7 @@ public class ScoreService {
                         scale.getQ8() +
                         scale.getQ9() +
                         scale.getQ10();
-        return result;
+        return result * 2.5;
     }
+
 }

@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+
+<div>
+    <span th:text="${ScoreService.computeScore()}"></span>
+</div>
+
+
+<div th:fragment="formField (field, value, size)">
     <div>
-        <span th:text="${ScoreService.computeScore()}"></span>
+        <label th:for="${#strings.toLowerCase(field)}"> <span
+                th:text="${field}">Field</span>
+        </label>
     </div>
-</body>
-</html>
+    <div>
+        <input type="text" th:id="${#strings.toLowerCase(field)}"
+               th:name="${#strings.toLowerCase(field)}" th:value="${value}"
+               th:size="${size}">
+    </div>
+</div>

@@ -12,6 +12,9 @@ import java.util.List;
 @Repository
 public interface ScaleRepository extends JpaRepository<Scale, Long> {
 
+/*    @Query(value = "SELECT * FROM SCALES", nativeQuery = true)
+    List<Scale> findAllScales();*/
+
 }
 
 

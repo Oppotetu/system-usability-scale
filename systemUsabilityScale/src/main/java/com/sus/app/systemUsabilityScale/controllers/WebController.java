@@ -1,6 +1,7 @@
 package com.sus.app.systemUsabilityScale.controllers;
 
 import com.sus.app.systemUsabilityScale.models.Scale;
+import com.sus.app.systemUsabilityScale.models.Score;
 import com.sus.app.systemUsabilityScale.repositories.ScaleRepository;
 import com.sus.app.systemUsabilityScale.services.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,31 +24,17 @@ public class WebController {
     @Autowired
     ScoreService scoreService;
 
-/*    @RequestMapping(value = "/scales")
-    public String index() {
-        return "index";
-    }*/
-
-/*    @GetMapping(value = "/dates")
-    public String getInfo(Model model) {
-        model.addAttribute("standardDate", new Date());
-        return "dates.html";
-    }*/
-
-    @GetMapping("/")
-    public String showForm(Model model) {
-        Scale scale = new Scale();
-        model.addAttribute("scale", scale);
-
-/*
-        List<String> listAgreement = Arrays.asList("1 - strongly disagree", "2", "3", "4", "5 - strongly agree");
-        model.addAttribute("listAgreement", listAgreement);
-*/
-
-        return "scale_form";
+/*    @GetMapping("/")
+    public String index(Model model) {
+        return "scaleForm";
     }
 
-    @PostMapping("/register")
+    @GetMapping("/globals")
+    public String globals(Model model) {
+        return "globals";
+    }*/
+
+/*    @PostMapping("/register")
     public String submitForm(@ModelAttribute("scale") Scale scale) {
         scoreService.computeScore(scale);
         scaleRepository.saveAndFlush(scale);
@@ -56,7 +43,20 @@ public class WebController {
 
     @GetMapping("/yourScore")
     public String getYourScore(Model model) {
-        model.addAttribute("scoreService", scoreService);
+        double score = scoreService.computeScore(new Scale());
+        model.addAttribute("score", score);
         return "yourScore";
     }
+
+    @GetMapping("/")
+    public String showForm(Model model) {
+        Scale scale = new Scale();
+        model.addAttribute("scale", scale);
+
+        List<String> listAgreement = Arrays.asList("1 - strongly disagree", "2", "3", "4", "5 - strongly agree");
+        model.addAttribute("listAgreement", listAgreement);
+
+        return "scale_form";
+    }*/
+
 }
