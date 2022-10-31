@@ -11,8 +11,8 @@
 <div id="root">
 
     <div class='nav-bar'>
-        <a href='urlhome'>Home</a>
-        <a href='urlglobals'>Globals</a>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/globals}">Globals</a>
     </div>
 
     <div class="page">
@@ -27,7 +27,7 @@
                 <td>
                     <select th:field="*{q1}" required>
 <!--
-                        <option value="" selected disabled hidden>Choose here</option>
+                        <option th:value="9" selected disabled hidden>Choose here</option>
 -->
                         <option th:value=${1}>1 - strongly disagree</option>
                         <option th:value=${2}>2</option>
@@ -183,7 +183,7 @@
             </tr>
             <tr>
                 <td>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Compute</button>
                 </td>
             </tr>
             </tbody>

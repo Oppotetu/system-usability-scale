@@ -2,14 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="ISO-8859-1">
+  <link th:href="@{/styles/style.css}" rel="stylesheet" />
   <title>Registration Success</title>
-  <style type="text/css">
+<!--  <style type="text/css">
     span {
         display: inline-block;
         width: 200px;
         text-align: left;
     }
-</style>
+  </style>-->
 </head>
 <body>
 <div align="center">
@@ -18,6 +19,16 @@
   <span>q2:</span><span th:text="${scale.q2}"></span><br/>
   <span>q3:</span><span th:text="${scale.q3}"></span><br/>
   <span>q4:</span><span th:text="${scale.q4}"></span><br/>
+  <span>q5:</span><span th:text="${scale.q5}"></span><br/>
+  <span>q6:</span><span th:text="${scale.q6}"></span><br/>
+  <span>q7:</span><span th:text="${scale.q7}"></span><br/>
+  <span>q8:</span><span th:text="${scale.q8}"></span><br/>
+  <span>q9:</span><span th:text="${scale.q9}"></span><br/>
+  <span>q10:</span><span th:text="${scale.q10}"></span><br/>
+</div>
+<div>
+  <h3>You gave the system a score of:</h3>
+  <span th:fragment="yourScore"></span>
 </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.sus.app.repository;
+package com.sus.app.configfrom;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

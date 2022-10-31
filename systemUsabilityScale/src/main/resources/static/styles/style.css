@@ -97,3 +97,7 @@ td {
     display: table-cell;
     vertical-align: inherit;
 }
+
+button {
+    margin: 20px;
+}
