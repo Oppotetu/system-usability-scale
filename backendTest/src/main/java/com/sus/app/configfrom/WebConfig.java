@@ -1,4 +1,4 @@
-package com.sus.app.systemUsabilityScale.config;
+package com.sus.app.configfrom;
 
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;

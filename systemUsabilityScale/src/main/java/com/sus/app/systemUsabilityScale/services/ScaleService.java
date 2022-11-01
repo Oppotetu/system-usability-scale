@@ -1,16 +1,12 @@
 package com.sus.app.systemUsabilityScale.services;
 
 import com.sus.app.systemUsabilityScale.models.Scale;
-import com.sus.app.systemUsabilityScale.models.Scale2;
-import com.sus.app.systemUsabilityScale.models.Score;
-import com.sus.app.systemUsabilityScale.repositories.ScaleRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ScaleService {
 
-    public double computeScore (Scale2 scale) {
+    public double computeScore (Scale scale) {
         double result =
                     scale.getQ1() +
                         scale.getQ2() +
@@ -24,5 +20,4 @@ public class ScaleService {
                         scale.getQ10();
         return result * 2.5;
     }
-
 }

@@ -31,11 +31,14 @@ public class Scale {
     @Column(name = "q10")
     private int q10;
 
+    @Column(name = "score")
+    private double score;
+
     public Scale() {
 
     }
 
-    public Scale(int q1, int q2, int q3, int q4, int q5, int q6, int q7, int q8, int q9, int q10) {
+    public Scale(int q1, int q2, int q3, int q4, int q5, int q6, int q7, int q8, int q9, int q10, double score) {
         this.q1 = q1;
         this.q2 = q2;
         this.q3 = q3;
@@ -46,6 +49,7 @@ public class Scale {
         this.q8 = q8;
         this.q9 = q9;
         this.q10 = q10;
+        this.score = score;
     }
 
     public long getId() {
@@ -130,5 +134,13 @@ public class Scale {
 
     public void setQ10(int q10) {
         this.q10 = q10;
+    }
+
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
     }
 }
