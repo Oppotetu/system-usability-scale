@@ -12,6 +12,42 @@
       <a th:href="@{/}">Home</a>
       <a th:href="@{/globals}">Globals</a>
     </div>
+
+    <div class="page">
+      <div th:if="${result != null}" class="message">
+        <span>You gave the system a score of:</span>
+        <span th:text="${result}">Score</span>
+        <span>/100</span>
+      </div>
+
+      <h2>Global statistics</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Statistic</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Average score</td>
+          <td>Average</td>
+        </tr>
+        <tr>
+          <td>Highest score</td>
+          <td>Highest score</td>
+        </tr>
+        <tr>
+          <td>Lowest score</td>
+          <td>lowest score</td>
+        </tr>
+        <tr>
+          <td>Average score during last hour</td>
+          <td>Average score during last hour</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </body>
 </html>

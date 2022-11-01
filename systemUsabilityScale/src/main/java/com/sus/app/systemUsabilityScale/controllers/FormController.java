@@ -7,52 +7,37 @@ import com.sus.app.systemUsabilityScale.repositories.Scale2Repository;
 import com.sus.app.systemUsabilityScale.repositories.ScaleRepository;
 import com.sus.app.systemUsabilityScale.services.ScaleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.yaml.snakeyaml.emitter.ScalarAnalysis;
 
+import javax.servlet.http.HttpSession;
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class FormController {
-
     @Autowired
     Scale2Repository scaleRepository;
     @Autowired
     ScaleService scaleService;
 
-/*    @GetMapping("/form")
-    public String getForm(Model model) {
-*//*
-        Scale2 scale = new Scale2();
-        model.addAttribute("Scale", scale);
-*//*
-        return "form";
-    }*/
-
-/*    @GetMapping("/form")
-    public ModelAndView showForm(Model model, InputMap inputMap) {
-*//*
-        Scale2 scale = new Scale2();
-*//*
-
-*//*
-        List<String> listAgreement = Arrays.asList("1 - strongly disagree", "2", "3", "4", "5 - strongly agree");
-        model.addAttribute("listAgreement", listAgreement);
-*//*
-
-        return new ModelAndView("form");
-    }*/
+    @GetMapping("/")
+    public String redirectHome() {
+        return "redirect:/form";
+    }
 
     @GetMapping("/form")
-    public String showForm(Model model) {
+    public String showForm(Model model, HttpSession httpSession) {
+
         Scale2 scale2 = new Scale2();
         model.addAttribute("scale2", scale2);
         return "form";
@@ -63,6 +48,26 @@ public class FormController {
         model.addAttribute("result", scaleService.computeScore(scale2));
         scale2.setScore(scaleService.computeScore(scale2));
         scaleRepository.saveAndFlush(scale2);
-        return "form";
+        return "globals";
+    }
+
+/*    @GetMapping("/globals")
+    public String showGlobals() {
+        return "globals";
+    }*/
+
+/*    @GetMapping("/globals")
+    public ResponseEntity<List<Scale2>> showGlobals(@RequestParam() double averageScore) {
+        List<Scale2> scales = new ArrayList<>();
+        scaleRepository.findAll().forEach(scales.score);
+        return "globals";
+    }*/
+
+    @GetMapping("/allScores")
+    public ResponseEntity<List<String>> getAllScales(@RequestParam(required = false) List<Double>) {
+        List<Double> scores = new ArrayList<>();
+        
+
+        return new ResponseEntity<>(scores, HttpStatus.OK);
     }
 }
