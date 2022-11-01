@@ -11,7 +11,7 @@
 <div id="root">
 
     <div class='nav-bar'>
-        <a th:href="@{/}">Home</a>
+        <a th:href="@{/form}">Home</a>
         <a th:href="@{/globals}">Globals</a>
     </div>
 
@@ -19,7 +19,7 @@
 
         <h2>System Usability Scale (SUS) App</h2>
         <h3>Please evaluate the system below</h3>
-        <form action="#" th:action="@{/form}" method="post" th:object="${scale}" class="table">
+        <form action="#" th:action="@{/form}" method="post" th:object="${scale2}" class="table">
             <br />
             <tbody class="tbody">
             <tr>
@@ -192,7 +192,7 @@
         <div th:if="${result != null}">
             <h1>You evaluated the system:</h1>
             <div>
-                <span th:text="${result.score}">Score</span>
+                <span th:text="${result}">Score</span>
             </div>
         </div>
     </div>

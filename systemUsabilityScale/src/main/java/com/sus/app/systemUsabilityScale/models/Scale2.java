@@ -49,7 +49,7 @@ public class Scale2 {
         this.q8 = q8;
         this.q9 = q9;
         this.q10 = q10;
-        this.score = (q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10) * 2.5;
+        this.score = score;
     }
 
     public long getId() {
