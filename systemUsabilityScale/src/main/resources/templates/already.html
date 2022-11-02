@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+
+  <title>Title</title>
+</head>
+<body>
+  <div class='nav-bar'>
+    <a th:href="@{/form}">Home</a>
+    <a th:href="@{/globals}">Globals</a>
+  </div>
+
+  <div class="page">
+    <br />
+    <span>You already evaluated the system!</span>
+    <br />
+    <span>Invalidate the session by going to the Globals page</span>
+  </div>
+</body>
+</html>

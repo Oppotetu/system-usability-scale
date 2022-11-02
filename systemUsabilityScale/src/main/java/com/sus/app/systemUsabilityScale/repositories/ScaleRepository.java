@@ -1,13 +1,8 @@
 package com.sus.app.systemUsabilityScale.repositories;
 
-import com.sus.app.systemUsabilityScale.models.AllScores;
 import com.sus.app.systemUsabilityScale.models.Scale;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
-import javax.swing.text.html.Option;
-import java.util.List;
-import java.util.Optional;
 
 public interface ScaleRepository extends JpaRepository<Scale, Long> {
 
@@ -31,4 +26,10 @@ public interface ScaleRepository extends JpaRepository<Scale, Long> {
 
     @Query("SELECT COUNT(score) FROM Scale")
     int findScoreCount();
+
+/*    List<Scale> findAllScoresLastHour(
+            Date evaluationTimeStart,
+            Date evaluationTimeEnd
+    )*/
+
 }

@@ -46,7 +46,7 @@ public class SessionController {
             (@RequestParam("color") String color,
              HttpServletRequest request) {
 
-        List<String > favoriteColors
+        List<String> favoriteColors
                 =getFavColors(request.getSession());
         if (StringUtils.hasLength(color)) {
             favoriteColors.add(color);

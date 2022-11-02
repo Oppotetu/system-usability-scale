@@ -1,6 +1,7 @@
 package com.sus.app.systemUsabilityScale.models;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "scales")
@@ -31,12 +32,15 @@ public class Scale {
     private int q10;
     @Column(name = "score")
     private float score;
+    @Basic
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date sqlTimestamp;
 
     public Scale() {
 
     }
 
-    public Scale(int q1, int q2, int q3, int q4, int q5, int q6, int q7, int q8, int q9, int q10, float score) {
+    public Scale(int q1, int q2, int q3, int q4, int q5, int q6, int q7, int q8, int q9, int q10, float score, Date sqlTimestamp) {
         this.q1 = q1;
         this.q2 = q2;
         this.q3 = q3;
@@ -48,6 +52,7 @@ public class Scale {
         this.q9 = q9;
         this.q10 = q10;
         this.score = score;
+        this.sqlTimestamp = sqlTimestamp;
     }
 
     public long getId() {
@@ -142,4 +147,11 @@ public class Scale {
         this.score = score;
     }
 
+    public Date getSqlTimestamp() {
+        return sqlTimestamp;
+    }
+
+    public void setSqlTimestamp(Date sqlTimestamp) {
+        this.sqlTimestamp = sqlTimestamp;
+    }
 }

@@ -25,11 +25,6 @@ code {
 }
 
 a {
-/*    display: flex;
-    position: absolute;
-    right: 50%;
-    flex: 1;
-    flex-direction: row;*/
     position: center;
     justify-content: center;
     self-align: center;
@@ -63,8 +58,18 @@ h3 {
 }
 
 select {
+    display: inline;
     padding: 2px;
     margin: 3px;
+    width: 15%;
+    text-align: center;
+    box-sizing: border-box;
+    align-self: center;
+}
+
+.td {
+    text-align: left;
+    align-self: left;
 }
 
 thead {
@@ -86,6 +91,8 @@ tr {
     display: table-row;
     vertical-align: inherit;
     border-color: inherit;
+    text-align: left;
+    width: 100px;
 }
 
 th {
@@ -99,11 +106,16 @@ th {
 td {
     padding-right: 10px;
     display: table-cell;
+    text-align: left;
     vertical-align: inherit;
 }
 
 button {
     margin: 20px;
+    width: 15%;
+    align-self: center;
+    background-color: #131a26;
+    color: #eee;
 }
 
 span {
