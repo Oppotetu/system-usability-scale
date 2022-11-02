@@ -1,5 +1,5 @@
 objects
-	10 questions, 0-4 score, final score *2.5, 
+	10 questions, 1-5 score, final score *2.5, 
 
 I think that I would like to use this system frequently.
 I found the system unnecessarily complex.

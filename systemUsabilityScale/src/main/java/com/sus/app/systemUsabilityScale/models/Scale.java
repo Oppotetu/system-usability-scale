@@ -9,7 +9,6 @@ public class Scale {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
     @Column(name = "q1")
     private int q1;
     @Column(name = "q2")
@@ -30,24 +29,14 @@ public class Scale {
     private int q9;
     @Column(name = "q10")
     private int q10;
-
     @Column(name = "score")
     private float score;
-
-    @Column(name = "average")
-    private float average;
-
-    @Column(name = "lowest")
-    private float lowest;
-
-    @Column(name = "highest")
-    private float highest;
 
     public Scale() {
 
     }
 
-    public Scale(int q1, int q2, int q3, int q4, int q5, int q6, int q7, int q8, int q9, int q10, float score, float average, float lowest, float highest) {
+    public Scale(int q1, int q2, int q3, int q4, int q5, int q6, int q7, int q8, int q9, int q10, float score) {
         this.q1 = q1;
         this.q2 = q2;
         this.q3 = q3;
@@ -59,9 +48,6 @@ public class Scale {
         this.q9 = q9;
         this.q10 = q10;
         this.score = score;
-        this.average = average;
-        this.lowest = lowest;
-        this.highest = highest;
     }
 
     public long getId() {
@@ -156,27 +142,4 @@ public class Scale {
         this.score = score;
     }
 
-    public float getAverage() {
-        return average;
-    }
-
-    public void setAverage(float average) {
-        this.average = average;
-    }
-
-    public float getLowest() {
-        return lowest;
-    }
-
-    public void setLowest(float lowest) {
-        this.lowest = lowest;
-    }
-
-    public float getHighest() {
-        return highest;
-    }
-
-    public void setHighest(float highest) {
-        this.highest = highest;
-    }
 }
