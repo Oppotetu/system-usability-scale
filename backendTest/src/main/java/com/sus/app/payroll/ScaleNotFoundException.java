@@ -1,4 +1,4 @@
-package com.sus.app.systemUsabilityScale.payroll;
+package com.sus.app.payroll;
 
 public class ScaleNotFoundException extends RuntimeException{
 

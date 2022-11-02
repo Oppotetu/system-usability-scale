@@ -61,7 +61,7 @@ select {
     display: inline;
     padding: 2px;
     margin: 3px;
-    width: 15%;
+    width: 30%;
     text-align: center;
     box-sizing: border-box;
     align-self: center;
@@ -69,7 +69,7 @@ select {
 
 .td {
     text-align: left;
-    align-self: left;
+    align-self: center;
 }
 
 thead {
@@ -107,12 +107,13 @@ td {
     padding-right: 10px;
     display: table-cell;
     text-align: left;
+    align-self: center;
     vertical-align: inherit;
 }
 
 button {
     margin: 20px;
-    width: 15%;
+    width: 30%;
     align-self: center;
     background-color: #131a26;
     color: #eee;

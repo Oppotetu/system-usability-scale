@@ -20,7 +20,4 @@ public class ComputeService {
                     scale.getQ10();
         return (float) (result * 2.5);
     }
-
-
-
 }
