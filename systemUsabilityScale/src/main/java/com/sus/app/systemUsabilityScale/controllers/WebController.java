@@ -5,6 +5,8 @@ import com.sus.app.systemUsabilityScale.repositories.ScaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @RestController
@@ -23,4 +25,12 @@ public class WebController {
     public float getAverageScore() {
         return this.scaleRepository.findAverageScore();
     }
+
+/*    @GetMapping("scales/time")
+    public List<Scale> getTime() throws ParseException {
+        List<Scale> result = this.scaleRepository.findByDate(
+                new SimpleDateFormat("yyyy-MM-dd HH:mm").
+                        parse("2022-11-01 10:10"));
+        return result;
+    }*/
 }

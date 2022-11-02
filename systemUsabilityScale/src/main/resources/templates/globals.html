@@ -47,12 +47,32 @@
         <tr>
           <td>Lowest score: </td>
           <td>
-            <span th:text="${lowest}">lowest</span>
+            <span th:text="${lowest}">Lowest</span>
           </td>
         </tr>
         <tr>
-          <td>Average score during last hour</td>
-          <td>Average score during last hour</td>
+          <td>Hourly score</td>
+          <td>
+            <span th:text="${hourly}">Hourly</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Daily Score</td>
+          <td>
+            <span th:text="${daily}">Daily</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Weekly Score</td>
+          <td>
+            <span th:text="${weekly}">Weekly</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Monthly Score</td>
+          <td>
+            <span th:text="${monthly}">Monthly</span>
+          </td>
         </tr>
         </tbody>
       </table>

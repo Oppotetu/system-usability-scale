@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 
 
@@ -41,8 +44,9 @@ public class FormController {
         model.addAttribute("result", computeService.computeScore(scale));
 
         if (session.getAttribute("submit") == null) {
-            scaleRepository.saveAndFlush(scale);
             scale.setScore(computeService.computeScore(scale));
+            scale.setSqlTimestamp(Date.from(Instant.now()));
+            scaleRepository.saveAndFlush(scale);
             session.setAttribute("submit", true);
             return "form";
         }
@@ -56,6 +60,10 @@ public class FormController {
         model.addAttribute("average", scaleRepository.findAverageScore()).toString();
         model.addAttribute("highest", scaleRepository.findHighestScore()).toString();
         model.addAttribute("lowest", scaleRepository.findLowestScore()).toString();
+        model.addAttribute("hourly", scaleRepository.findHourlyScore()).toString();
+        model.addAttribute("daily", scaleRepository.findDailyScore()).toString();
+        model.addAttribute("weekly", scaleRepository.findWeeklyScore()).toString();
+        model.addAttribute("monthly", scaleRepository.findMonthlyScore()).toString();
         return "globals";
     }
 
