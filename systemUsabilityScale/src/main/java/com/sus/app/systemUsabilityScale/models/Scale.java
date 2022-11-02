@@ -32,13 +32,22 @@ public class Scale {
     private int q10;
 
     @Column(name = "score")
-    private double score;
+    private float score;
+
+    @Column(name = "average")
+    private float average;
+
+    @Column(name = "lowest")
+    private float lowest;
+
+    @Column(name = "highest")
+    private float highest;
 
     public Scale() {
 
     }
 
-    public Scale(int q1, int q2, int q3, int q4, int q5, int q6, int q7, int q8, int q9, int q10, double score) {
+    public Scale(int q1, int q2, int q3, int q4, int q5, int q6, int q7, int q8, int q9, int q10, float score, float average, float lowest, float highest) {
         this.q1 = q1;
         this.q2 = q2;
         this.q3 = q3;
@@ -50,6 +59,9 @@ public class Scale {
         this.q9 = q9;
         this.q10 = q10;
         this.score = score;
+        this.average = average;
+        this.lowest = lowest;
+        this.highest = highest;
     }
 
     public long getId() {
@@ -140,7 +152,31 @@ public class Scale {
         return score;
     }
 
-    public void setScore(double score) {
+    public void setScore(float score) {
         this.score = score;
+    }
+
+    public float getAverage() {
+        return average;
+    }
+
+    public void setAverage(float average) {
+        this.average = average;
+    }
+
+    public float getLowest() {
+        return lowest;
+    }
+
+    public void setLowest(float lowest) {
+        this.lowest = lowest;
+    }
+
+    public float getHighest() {
+        return highest;
+    }
+
+    public void setHighest(float highest) {
+        this.highest = highest;
     }
 }

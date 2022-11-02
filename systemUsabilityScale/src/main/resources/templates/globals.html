@@ -4,34 +4,32 @@
 <html lang="en">
 <head>
   <link th:href="@{/styles/style.css}" rel="stylesheet" />
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"/>
 </head>
 <body>
   <div id="root">
     <div class='nav-bar'>
-      <a th:href="@{/}">Home</a>
+      <a th:href="@{/form}">Home</a>
       <a th:href="@{/globals}">Globals</a>
     </div>
 
     <div class="page">
-      <div th:if="${result != null}" class="message">
-        <span>You gave the system a score of:</span>
-        <span th:text="${result}">Score</span>
-        <span>/100</span>
-      </div>
+
+
 
       <h2>Global statistics</h2>
       <table class="table">
         <thead>
           <tr>
-            <th>Statistic</th>
-            <th>Score</th>
+            <th>For the current system </th>
           </tr>
         </thead>
         <tbody>
         <tr>
           <td>Average score</td>
-          <td>Average</td>
+          <td>
+            <span th:text="${average}">Average</span>
+          </td>
         </tr>
         <tr>
           <td>Highest score</td>

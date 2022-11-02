@@ -1,33 +1,41 @@
 package com.sus.app.systemUsabilityScale.controllers;
 
 
+import com.jayway.jsonpath.internal.function.numeric.Average;
 import com.sus.app.systemUsabilityScale.models.Scale;
 import com.sus.app.systemUsabilityScale.repositories.ScaleRepository;
+import com.sus.app.systemUsabilityScale.services.ComputeService;
 import com.sus.app.systemUsabilityScale.services.ScaleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.MediaTypes;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.thymeleaf.context.IContext;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
+
+import static com.fasterxml.jackson.databind.type.LogicalType.Map;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 @Controller
 public class FormController {
     @Autowired
     ScaleRepository scaleRepository;
-/*    @Autowired
-    ScoreRepository scoreRepository;*/
     @Autowired
     ScaleService scaleService;
+    @Autowired
+    ComputeService computeService;
 
-    @GetMapping("/")
+/*    @GetMapping("/")
     public String redirectHome() {
         return "redirect:/form";
-    }
+    }*/
+
     @GetMapping("/form")
     public String showForm(Model model, HttpSession httpSession) {
 
@@ -35,23 +43,57 @@ public class FormController {
         model.addAttribute("scale", scale);
         return "form";
     }
+
     @PostMapping("/form")
     public String postScore(@ModelAttribute("scale") Scale scale, Model model) {
-        model.addAttribute("result", scaleService.computeScore(scale));
-        scale.setScore(scaleService.computeScore(scale));
+        model.addAttribute("result", computeService.computeScore(scale));
+        scale.setScore(computeService.computeScore(scale));
         scaleRepository.saveAndFlush(scale);
-        return "globals";
+        return "form";
     }
-    @GetMapping("/globals")
-    public String showGlobals() {
+
+/*    @GetMapping("/globals")
+    public String showGlobals(Model model) {
+        Scale scale = new Scale();
+        model.addAttribute("average", this.scaleRepository.findAverageScore());
+        return "globals";
+    }*/
+
+/*
+    produces = MediaType.APPLICATION_JSON_VALUE
+*/
+
+    @GetMapping("globals")
+    public String getAverage(Model model) {
+        model.addAttribute("average", scaleRepository.findAverageScore());
+        model.toString();
         return "globals";
     }
 
-    @GetMapping("/form/{id}")
+
+/*    @GetMapping("/scales")
     @ResponseBody
     public Optional<Scale> getFoos(@RequestParam() Scale scale) {
         return scaleRepository.findById(scale.getId());
+    }*/
+
+/*
+    @GetMapping("/scales")
+    List<Scale> all() {
+        return scaleRepository.findAll();
     }
+
+    @GetMapping("/scales/{id}")
+    EntityModel<Scale> one(@PathVariable Long id) {
+
+        Scale scale = scaleRepository.findById(id) //
+                .orElseThrow(() -> new ScaleNotFoundException(id));
+
+        return EntityModel.of(scale, //
+                linkTo(methodOn(FormController.class).one(id)).withSelfRel(),
+                linkTo(methodOn(FormController.class).all()).withRel("scales"));
+    }
+*/
 
 /*    @GetMapping("/scores")
     public List<Object[]> getAllScores(@RequestParam Scale scale) {

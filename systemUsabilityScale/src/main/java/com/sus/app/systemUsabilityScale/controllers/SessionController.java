@@ -1,6 +1,6 @@
 package com.sus.app.systemUsabilityScale.controllers;
 
-import com.sus.app.systemUsabilityScale.services.ScaleService;
+import com.sus.app.systemUsabilityScale.services.ComputeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -24,7 +24,7 @@ public class SessionController {
     }*/
 
     @Autowired
-    ScaleService scaleService;
+    ComputeService computeService;
 
 /*    @PostMapping("/scales")
     private int saveScale(@RequestBody Scale scale) {
