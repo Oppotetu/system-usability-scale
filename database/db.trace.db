@@ -6003,3 +6003,8 @@ SELECT AVG(score) FROM Scales WHERE sqlTimestamp > DATEADD(hh, -1, CURRENT_TIMES
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-02 22:27:38 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM SCALES \000d\000a\000d\000aDELETE [*]FROM SCALES WHERE id=43"; SQL statement:
+SELECT * FROM SCALES 
+
+DELETE FROM SCALES WHERE id=43 [42000-214]
