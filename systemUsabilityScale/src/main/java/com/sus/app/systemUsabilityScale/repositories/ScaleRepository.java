@@ -21,5 +21,14 @@ public interface ScaleRepository extends JpaRepository<Scale, Long> {
     AllScores findScore();*/
 
     @Query("SELECT AVG(score) FROM Scale")
-    public float findAverageScore();
+    float findAverageScore();
+
+    @Query("SELECT MIN(score) FROM Scale")
+    float findLowestScore();
+
+    @Query("SELECT MAX(score) FROM Scale")
+    float findHighestScore();
+
+    @Query("SELECT COUNT(score) FROM Scale")
+    int findScoreCount();
 }

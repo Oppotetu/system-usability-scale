@@ -16,14 +16,16 @@
     </div>
 
 
-
     <div class="page">
         <h2>System Usability Scale (SUS) App</h2>
-
-        <div th:if="${result != null}" class="message">
-            <span>You gave the system a score of:</span>
-            <span th:text="${result}">Score</span>
-            <span>/100</span>
+        <div class="table">
+            <div th:if="${result != null}" class="message">
+                <span>You gave the system a score of:</span>
+                <span th:text="${result}">Score</span>
+                <span>/100</span>
+                <br />
+                <a th:href="@{/globals}">Check out global statistics</a>
+            </div>
         </div>
         <div th:if="${result == null}">
             <h3>Please evaluate the system below</h3>

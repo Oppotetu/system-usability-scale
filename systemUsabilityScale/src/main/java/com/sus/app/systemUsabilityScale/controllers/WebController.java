@@ -23,7 +23,6 @@ public class WebController {
 
     @GetMapping("scales/average")
     public float getAverageScore() {
-
         return this.scaleRepository.findAverageScore();
     }
 }

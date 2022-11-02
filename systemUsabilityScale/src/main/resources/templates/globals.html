@@ -18,6 +18,7 @@
 
 
       <h2>Global statistics</h2>
+      <span class="table">68 is considered an average score for any given system</span>
       <table class="table">
         <thead>
           <tr>
@@ -26,18 +27,28 @@
         </thead>
         <tbody>
         <tr>
-          <td>Average score</td>
+          <td>Number of evaluations: </td>
+          <td>
+            <span th:text="${count}">Average</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Average score: </td>
           <td>
             <span th:text="${average}">Average</span>
           </td>
         </tr>
         <tr>
-          <td>Highest score</td>
-          <td>Highest score</td>
+          <td>Highest score: </td>
+          <td>
+            <span th:text="${highest}">Highest</span>
+          </td>
         </tr>
         <tr>
-          <td>Lowest score</td>
-          <td>lowest score</td>
+          <td>Lowest score: </td>
+          <td>
+            <span th:text="${lowest}">lowest</span>
+          </td>
         </tr>
         <tr>
           <td>Average score during last hour</td>

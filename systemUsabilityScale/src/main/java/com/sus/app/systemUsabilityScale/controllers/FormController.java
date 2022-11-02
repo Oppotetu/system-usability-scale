@@ -65,8 +65,10 @@ public class FormController {
 
     @GetMapping("globals")
     public String getAverage(Model model) {
-        model.addAttribute("average", scaleRepository.findAverageScore());
-        model.toString();
+        model.addAttribute("count", scaleRepository.findScoreCount()).toString();
+        model.addAttribute("average", scaleRepository.findAverageScore()).toString();
+        model.addAttribute("highest", scaleRepository.findHighestScore()).toString();
+        model.addAttribute("lowest", scaleRepository.findLowestScore()).toString();
         return "globals";
     }
 
